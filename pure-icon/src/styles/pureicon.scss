@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$accent: #38D;
+
+*, *:before, *:after { box-sizing: border-box; }
+body { background: #FAFAFA; }
+#header {
+  width: 100vw; height: 150px;
+  background: #EEE;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 -1px #CCC, 0 -7px 5px 10px rgba(0,0,0,.15);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10pt;
+  color: #888;
+  text-align: center;
+  line-height: normal;
+  font-smoothing: antialiased;
+  h1 { font-size: 35pt; color: #666; font-weight: bold; }
+}
+
+  hr { border: 0; width: 100%; margin: 0; }
+  .icon {
+    position: relative;
+    width: 35px; height: 35px;
+    margin: 15px;
+    overflow: hidden;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      margin: auto;
+    }
+    
+    // - - - - - FIRST ROW
+    // BURGER
+    &.burg:before {
+      width: calc(100%/2); height: 3px;
+      background: $accent;
+      box-shadow: 0 -6px $accent, 0 6px $accent;
+    }
+    // HOME
+    &.home {
+      &:before {
+        bottom: -12px;
+        width: 5px; height: 5px;
+        box-shadow: -5px 0 $accent, -5px -5px $accent,
+                    0 -5px $accent, 5px -5px $accent,
+                    5px 0 $accent;
+      }
+      &:after {
+        top: -12px;
+        width: 0; height: 0;
+        border-width: 0 12px 12px;
+        border-style: solid;
+        border-color: transparent transparent $accent;
+      }
+    }
+    // USER
+    &.user {
+      &:before {
+        top: -10px;
+        width: 12px; height: 12px;
+        border-radius: 100%;
+        background: $accent;
+      }
+      &:after {
+        bottom: -12px;
+        width: calc(100%/2); height: 7px;
+        border-radius: 5px 5px 3px 3px;
+        background: $accent;
+      }
+    }
+    // SETTINGS
+    &.settings {
+      &:before {
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+        border-radius: 100%;
+        border: 6px dotted $accent;
+      }
+      &:after {
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 100%;
+        box-shadow: inset 0 0 0 5px $accent;
+      }
+    }
+    // MAIL
+    &.mail {
+      &:before {
+        width: calc(100%/1.5); height: calc(100%/1.8);
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 3px $accent;
+      }
+      &:after {
+        top: -12px;
+        width: 14px; height: 14px;
+        border-radius: 0 0 5px 0;
+        border-width: 0 3px 3px 0;
+        border-style: solid;
+        border-color: transparent $accent $accent transparent;
+        transform: rotate(45deg);
+      }
+    }
+    // MESSAGE
+    &.message {
+      &:before {
+        top: -3px;
+        width: calc(100%/1.5); height: calc(100%/2);
+        border-radius: 5px;
+        background: $accent;
+      }
+      &:after {
+        left: -4px; bottom: -16px;
+        width: 0; height: 0;
+        border-width: 4px;
+        border-style: solid;
+        border-color: $accent transparent transparent $accent;
+      }
+    }
+    // SEARCH
+    &.search {
+      &:before {
+        top: -5px; left: -5px;
+        width: 10px; height: 10px;
+        border-radius: 100%;
+        box-shadow: 0 0 0 4px $accent;
+      }
+      &:after {
+        right: -10px; bottom: -10px;
+        width: 5px; height: 12px;
+        background: $accent;
+        transform: rotate(-45deg);
+      }
+    }
+    // CLOCK
+    &.clock {
+      &:before {
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        border-radius: 100%;
+        box-shadow: 0 0 0 3px $accent;
+      }
+      &:after {
+        top: -4px; right: -4px;
+        width: 8px; height: 10px;
+        border-width: 0 0 3px 3px;
+        border-style: solid;
+        border-color: transparent transparent $accent $accent;
+      }
+    }
+    
+    // - - - - - SECOND ROW
+    // PLUS
+    &.plus {
+      &:before {
+        width: calc(100%/2); height: 3px;
+        background: $accent;
+      }
+      &:after {
+        width: 3px; height: calc(100%/2);
+        background: $accent;
+      }
+    }
+    // MINUS
+    &.minus:before {
+      width: calc(100%/2); height: 3px;
+      background: $accent;
+    }
+    // TIMES
+    &.times {
+      &:before {
+        width: calc(100%/2); height: 3px;
+        background: $accent;
+        transform: rotate(45deg);
+      }
+      &:after {
+        width: calc(100%/2); height: 3px;
+        background: $accent;
+        transform: rotate(-45deg);
+      }
+    }
+    // DIVIDE
+    &.divide {
+      &:before {
+        width: calc(100%/2); height: 3px;
+        background: $accent;
+      }
+      &:after {
+        width: 5px; height: 5px;
+        border-radius: 100%;
+        box-shadow: 0 -6px $accent, 0 6px $accent;
+      }
+    }
+    // ARROWS
+    &[class*='arrow-'] {
+      &:before {
+        width: calc(100%/2.5); height: calc(100%/2.5);
+        border-width: 3px;
+        border-style: solid;
+        border-color: $accent;
+        transform: rotate(45deg);
+      }
+    }
+    // UP ARROW
+    &.arrow-up:before { bottom: -5px; border-width: 3px 0 0 3px; }
+    // DOWN ARROW
+    &.arrow-down:before { top: -5px; border-width: 0 3px 3px 0; }
+    // LEFT ARROW
+    &.arrow-left:before { right: -5px; border-width: 0 0 3px 3px; }
+    // RIGHT ARROW
+    &.arrow-right:before { left: -5px; border-width: 3px 3px 0 0; }
+    
+    // - - - - - THIRD ROW
+    // PLAY
+    &.play:before {
+      right: -5px;
+      width: 0; height: 0;
+      border-width: 10px 0 10px 15px;
+      border-style: solid;
+      border-color: transparent transparent transparent $accent;
+    }
+    // PAUSE
+    &.pause:before {
+      width: 5px; height: calc(100%/2);
+      box-shadow: -5px 0 $accent, 5px 0 $accent;
+    }
+    // STOP
+    &.stop:before {
+      width: calc(100%/2); height: calc(100%/2);
+      background: $accent;
+    }
+    // RECORD
+    &.record:before {
+      width: calc(100% - 14px);
+      height: calc(100% - 14px);
+      border-radius: 100%;
+      background: $accent;
+    }
+    // NEXT
+    &.next {
+      &:before {
+        left: -5px;
+        width: 0; height: 0;
+        border-width: 10px 0 10px 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent $accent;
+      }
+      &:after {
+        right: -14px;
+        width: 0; height: 0;
+        border-width: 10px 0 10px 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent $accent;
+      }
+    }
+    // PREVIOUS
+    &.prev {
+      &:before {
+        right: -5px;
+        width: 0; height: 0;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent $accent transparent transparent;
+      }
+      &:after {
+        left: -14px;
+        width: 0; height: 0;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent $accent transparent transparent;
+      }
+    }
+    // FIRST
+    &.first {
+      &:before {
+        left: -5px;
+        width: 0; height: 0;
+        border-width: 10px 0 10px 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent $accent;
+      }
+      &:after {
+        right: -11px;
+        width: 6px; height: 20px;
+        background: $accent;
+      }
+    }
+    // LAST
+    &.last {
+      &:before {
+        right: -5px;
+        width: 0; height: 0;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent $accent transparent transparent;
+      }
+      &:after {
+        left: -11px;
+        width: 6px; height: 20px;
+        background: $accent;
+      }
+    }
+  }

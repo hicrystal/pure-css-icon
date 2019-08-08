@@ -1,0 +1,11 @@
+@import './pureicon.scss';
+.App {
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        li {
+            list-style: none;
+        }
+    }
+   
+  }
