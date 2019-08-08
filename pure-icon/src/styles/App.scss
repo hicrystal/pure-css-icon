@@ -3,8 +3,14 @@
     ul {
         display: flex;
         flex-flow: row wrap;
+        width: 350px;
+        justify-content: center;
+        align-items: center;
         li {
             list-style: none;
+            .icon {
+                display: block;
+            }
         }
     }
    
