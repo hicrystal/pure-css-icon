@@ -2,14 +2,18 @@
 .App {
     ul {
         display: flex;
+        margin: auto;
         flex-flow: row wrap;
-        width: 350px;
+        width: 530px;
         justify-content: center;
         align-items: center;
         li {
             list-style: none;
             .icon {
                 display: block;
+            }
+            span {
+                padding: 10px;
             }
         }
     }

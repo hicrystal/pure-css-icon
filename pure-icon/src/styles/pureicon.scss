@@ -304,4 +304,17 @@ body { background: #FAFAFA; }
         background: $accent;
       }
     }
+    &.check{
+      &::before {
+        width: calc(100%/2.5);
+        height: calc(100%/1.5);
+        border-style: solid;
+        border-color: #38D;
+        transform: rotate(45deg);
+        top: -5px;
+        border-width: 0 4px 4px 0;
+      }
+     
+
+    }
   }
